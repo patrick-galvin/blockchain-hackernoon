@@ -1,0 +1,5 @@
+{:blockchain-hackernoon.app/storage nil
+ :blockchain-hackernoon.app/nodes nil
+ :blockchain-hackernoon.http/server  {:port 3000
+                                      :storage #ig/ref :blockchain-hackernoon.app/storage
+                                      :nodes #ig/ref :blockchain-hackernoon.app/nodes}}
