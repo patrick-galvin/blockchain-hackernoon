@@ -63,11 +63,11 @@
 
 (defn resolve-node-resource [{:keys [chain]} nodes]
   (resource
-    {:id ::resolve
+    {:id      ::resolve
      :summary "Finds authoritative chain"
      :methods {:get {:response (fn [_]
-                                 ((let [consensus-chain (resolve-conflict chain nodes)]
-                                    (replace-chain! chain consensus-chain))))}}}))
+                                 (let [consensus-chain (resolve-conflict chain nodes)]
+                                   (replace-chain! chain consensus-chain)))}}}))
 
 (defn create-listener [port storage nodes]
   (listener
